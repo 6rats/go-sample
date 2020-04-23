@@ -7,7 +7,8 @@ import (
 
 func Migration() {
   db := GetDB()
-  db.AutoMigrate(&Person{})
+  db.AutoMigrate(&User{})
+  db.AutoMigrate(&Park{})
 }
 
 func GetDB() *gorm.DB {

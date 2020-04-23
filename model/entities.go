@@ -4,9 +4,16 @@ import (
   "github.com/jinzhu/gorm"
 )
 
-type Person struct {
+type User struct {
   gorm.Model
   Name string
   Age int
+}
+
+type Park struct {
+  gorm.Model
+  Name string
+  Lat float32
+  Lon float32
 }
 
