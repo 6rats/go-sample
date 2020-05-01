@@ -2,7 +2,7 @@ package model
 
 import (
   "github.com/jinzhu/gorm"
-  _ "github.com/mattn/go-sqlite3"
+  _ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
 func Migration() {
@@ -12,7 +12,7 @@ func Migration() {
 }
 
 func GetDB() *gorm.DB {
-  db, err := gorm.Open("sqlite3", "test.sqlite3")
+  db, err := gorm.Open("mysql", "root:@(db)/parks?charset=utf8&parseTime=True&loc=Local")
   if err != nil {
     panic("failed to connect database\n")
   }
