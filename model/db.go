@@ -12,7 +12,7 @@ func Migration() {
 }
 
 func GetDB() *gorm.DB {
-  db, err := gorm.Open("mysql", "root:@(db)/parks?charset=utf8&parseTime=True&loc=Local")
+  db, err := gorm.Open("mysql", "test_user:test_pass@(db)/parks?charset=utf8&parseTime=True&loc=Local")
   if err != nil {
     panic("failed to connect database\n")
   }

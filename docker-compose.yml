@@ -13,8 +13,10 @@ services:
     image: mysql:5.7
     hostname: db
     environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
       MYSQL_DATABASE: parks
+      MYSQL_ROOT_PASSWORD: root_pass
+      MYSQL_USER: test_user
+      MYSQL_PASSWORD: test_pass
     volumes:
       - ./sql:/docker-entrypoint-initdb.d
     ports:
