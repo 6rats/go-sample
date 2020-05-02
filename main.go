@@ -2,8 +2,8 @@ package main
 
 import (
   "local.packages/model"
+  "local.packages/controller"
   "github.com/gin-gonic/gin"
-  "strconv"
 )
 
 func main() {
@@ -15,6 +15,13 @@ func main() {
     c.String(200, "Hello,World!")
   })
 
+  parks := router.Group("/parks")
+  {
+    controller := controller.UserController{}
+    parks.GET("", controller.Index)
+  }
+
+  /*
   router.GET("/parks", func(c *gin.Context) {
     pref := c.DefaultQuery("pref", "Tokyo")//パラメータが未指定の時に効く
     if pref == "" {
@@ -37,6 +44,7 @@ func main() {
     db.Create(&model.Park{Name: "Test Park", Lat: 35.734621, Lon: 139.7098774})
     db.Close()
   })
+  */
 
   router.Run()
 }
