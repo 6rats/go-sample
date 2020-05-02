@@ -1,4 +1,5 @@
 # go-sample
 
-## 参考
-goの言語仕様 https://golang.org/ref/sp 
+### 参考
+* goの言語仕様 https://golang.org/ref/sp 
+* gormのドキュメント https://gorm.io/docs/
