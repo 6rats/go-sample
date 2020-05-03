@@ -17,7 +17,7 @@ func main() {
 
   parks := router.Group("/parks")
   {
-    controller := controller.UserController{}
+    controller := controller.ParkController{}
     parks.GET("", controller.Index)
   }
 

@@ -7,13 +7,13 @@ import (
   "log"
 )
 
-type UserController struct{}
+type ParkController struct{}
 
 type IndexParams struct {
   Pref int `form:"pref" binding:"required,min=1,max=47"`
 }
 
-func (uc UserController) Index(c *gin.Context) {
+func (uc ParkController) Index(c *gin.Context) {
 
   var params IndexParams
 
