@@ -13,3 +13,7 @@ replace local.packages/model => ./model
 require local.packages/model v0.0.0
 
 replace local.packages/controller => ./controller
+
+require local.packages/router v0.0.0
+
+replace local.packages/router => ./router

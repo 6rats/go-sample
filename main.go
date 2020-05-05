@@ -2,24 +2,16 @@ package main
 
 import (
   "local.packages/model"
-  "local.packages/controller"
+  "local.packages/router"
   "github.com/gin-gonic/gin"
 )
 
 func main() {
-  router := gin.Default()
 
+  r := gin.Default()
   model.Migration()
-
-  router.GET("/", func(c *gin.Context) {
-    c.String(200, "Hello,World!")
-  })
-
-  parks := router.Group("/parks")
-  {
-    controller := controller.ParkController{}
-    parks.GET("", controller.Index)
-  }
+  router.Routing(r)
+  r.Run()
 
   /*
   router.GET("/parks", func(c *gin.Context) {
@@ -45,6 +37,4 @@ func main() {
     db.Close()
   })
   */
-
-  router.Run()
 }
